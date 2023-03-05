@@ -30,7 +30,16 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        $product = Product::create($request->validated());
+        $request['person'] = Auth::user()->name;
+
+        $data['name'] = $request['name'];
+        $data['price'] = $request['price'];
+        $data['person'] = Auth::user()->name;
+        $data['type'] = $request['type'];
+
+        $product = Product::create($data);
+
+        // $product = Product::create($request->validated());
 
         Mail::send('productMail.productMail',array('data' => $product), function($message)
         {

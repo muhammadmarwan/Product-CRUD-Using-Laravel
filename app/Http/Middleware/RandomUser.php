@@ -22,8 +22,8 @@ class RandomUser
             return $next($request);
         }else{
             $userData = array(
-                'email' => 'mhdmarwan111@gmail.com',
-                'password' => '56995699'
+                'email' => 'mhdmarwan777@gmail.com',
+                'password' => '123456'
             );
 
             if(Auth::attempt($userData))

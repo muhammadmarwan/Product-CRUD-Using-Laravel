@@ -24,8 +24,7 @@ class StoreProductRequest extends FormRequest
         return [
             'name'=>['required'],
             'price'=>['required'],
-            'person'=>['required'],
-            'type'=>['required']
+            'type'=>['required'],
         ];
     }
 }
