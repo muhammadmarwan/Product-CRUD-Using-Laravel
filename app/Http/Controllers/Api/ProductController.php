@@ -39,8 +39,6 @@ class ProductController extends Controller
 
         $product = Product::create($data);
 
-        // $product = Product::create($request->validated());
-
         Mail::send('productMail.productMail',array('data' => $product), function($message)
         {
             $message->to(Auth::user()->email, 'John Smith')->subject('Welcome Product has been created!');
